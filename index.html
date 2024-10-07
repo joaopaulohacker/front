@@ -3,251 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .login-container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        input {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <input type="email" placeholder="E-mail" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #1a1a1a;
-            color: #ffffff;
-        }
-        .login-container {
-            background-color: #2a2a2a;
-            padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        input {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #444;
-            border-radius: 3px;
-            background-color: #333;
-            color: #ffffff;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <input type="email" placeholder="E-mail" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - Login</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/6e32b96a-d4be-4e44-a19b-1bd2d2279b51/ee068656-14b9-4821-89b4-53b4937d9f1c/BR-pt-20220516-popsignuptwoweeks-perspective_alpha_website_small.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .login-container {
-            background-color: rgba(0, 0, 0, 0.75);
-            border-radius: 4px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            min-height: 660px;
-            padding: 60px 68px 40px;
-            width: 450px;
-        }
-        h1 {
-            color: #fff;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 28px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        input {
-            background: #333;
-            border-radius: 4px;
-            border: 0;
-            color: #fff;
-            height: 50px;
-            line-height: 50px;
-            padding: 16px 20px 0;
-            margin-bottom: 16px;
-        }
-        input::placeholder {
-            color: #8c8c8c;
-        }
-        button {
-            background: #e50914;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 700;
-            margin: 24px 0 12px;
-            padding: 16px;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #f40612;
-        }
-        .remember-forgot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #b3b3b3;
-            font-size: 13px;
-        }
-        .remember {
-            display: flex;
-            align-items: center;
-        }
-        .remember input {
-            margin-right: 5px;
-        }
-        a {
-            color: #b3b3b3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h1>Entrar</h1>
-        <form>
-            <input type="email" placeholder="Email ou número de telefone" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-            <div class="remember-forgot">
-                <div class="remember">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Lembre-se de mim</label>
-                </div>
-                <a href="#">Precisa de ajuda?</a>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix - Entrar</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #000;
             margin: 0;
             padding: 0;
-            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .login-container {
             background-color: rgba(0, 0, 0, 0.75);
@@ -286,11 +52,11 @@
             background: #e50914;
             border: 0;
             border-radius: 4px;
+            color: #fff;
             font-size: 16px;
             font-weight: 700;
             margin: 24px 0 12px;
             padding: 16px;
-            color: #fff;
             cursor: pointer;
         }
         button:hover {
