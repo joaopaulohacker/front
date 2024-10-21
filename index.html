@@ -1,202 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - Entrar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .login-container {
-            background-color: rgba(0, 0, 0, 0.75);
-            border-radius: 4px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            min-height: 660px;
-            padding: 60px 68px 40px;
-            width: 450px;
-        }
-        h1 {
-            color: #fff;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 28px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        input {
-            background: #333;
-            border: 0;
-            border-radius: 4px;
-            color: #fff;
-            height: 50px;
-            line-height: 50px;
-            padding: 16px 20px 0;
-            margin-bottom: 16px;
-        }
-        input::placeholder {
-            color: #8c8c8c;
-        }
-        button {
-            background: #e50914;
-            border: 0;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            margin: 24px 0 12px;
-            padding: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #f40612;
-        }
-        .remember-forgot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #b3b3b3;
-            font-size: 13px;
-        }
-        .remember {
-            display: flex;
-            align-items: center;
-        }
-        .remember input {
-            margin-right: 5px;
-            height: auto;
-        }
-        a {
-            color: #b3b3b3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Página de Usuários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Entrar</h1>
-        <form>
-            <input type="email" placeholder="Email ou número de telefone" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-            <div class="remember-forgot">
-                <div class="remember">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Lembre-se de mim</label>
-                </div>
-                <a href="#">Precisa de ajuda?</a>
-            </div>
-        </form>
+    <div class="container mt-5">
+        <h1 class="mb-4">Lista de Usuários</h1>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($usuarios as $usuario)
+                    <tr>
+                        <td>{{ $usuario->id }}</td>
+                        <td>{{ $usuario->nome }}</td>
+                        <td>{{ $usuario->email }}</td>
+                        <td>
+                            <a href="{{ route('usuarios.editar', $usuario->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                            <form action="{{ route('usuarios.excluir', $usuario->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        
+        <a href="{{ route('usuarios.criar') }}" class="btn btn-success">Adicionar Novo Usuário</a>
     </div>
-</body>
-</html>
 
-<style>
-    body {
-        background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
-        background-size: cover;
-        background-position: center;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .background-mask {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-    }
-    .netflix-logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 150px;
-    }
-    .login-container {
-        background-color: rgba(0, 0, 0, 0.75);
-        border-radius: 4px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        min-height: 515px;
-        padding: 60px 68px 40px;
-        width: 450px;
-    }
-    h1 {
-        color: #fff;
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 28px;
-    }
-    input {
-        background: #333;
-        border: 0;
-        border-radius: 4px;
-        color: #fff;
-        height: 50px;
-        line-height: 50px;
-        padding: 16px 20px 0;
-    }
-    input::placeholder {
-        color: #8c8c8c;
-    }
-    button {
-        background: #e50914;
-        border: 0;
-        border-radius: 4px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 700;
-        margin: 24px 0 12px;
-        padding: 16px;
-    }
-    .remember-forgot {
-        color: #b3b3b3;
-    }
-    a {
-        color: #b3b3b3;
-    }
-</style>
-</head>
-<body>
-    <div class="background-mask"></div>
-    <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="Netflix Logo" class="netflix-logo">
-    <div class="login-container">
-        <h1>Entrar</h1>
-        <form>
-            <input type="email" placeholder="Email ou número de telefone" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-            <div class="remember-forgot">
-                <div class="remember">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Lembre-se de mim</label>
-                </div>
-                <a href="#">Precisa de ajuda?</a>
-            </div>
-        </form>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
